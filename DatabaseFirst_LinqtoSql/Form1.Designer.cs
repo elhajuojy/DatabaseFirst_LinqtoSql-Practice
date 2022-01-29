@@ -71,7 +71,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnRecherche.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecherche.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnRecherche.Location = new System.Drawing.Point(911, 44);
+            this.btnRecherche.Location = new System.Drawing.Point(898, 29);
             this.btnRecherche.Name = "btnRecherche";
             this.btnRecherche.Size = new System.Drawing.Size(236, 40);
             this.btnRecherche.TabIndex = 0;
@@ -83,7 +83,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnAjouter.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjouter.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnAjouter.Location = new System.Drawing.Point(911, 182);
+            this.btnAjouter.Location = new System.Drawing.Point(898, 167);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(236, 40);
             this.btnAjouter.TabIndex = 1;
@@ -95,7 +95,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnModifer.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifer.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnModifer.Location = new System.Drawing.Point(911, 136);
+            this.btnModifer.Location = new System.Drawing.Point(898, 121);
             this.btnModifer.Name = "btnModifer";
             this.btnModifer.Size = new System.Drawing.Size(236, 40);
             this.btnModifer.TabIndex = 2;
@@ -107,7 +107,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnSupprimer.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSupprimer.Location = new System.Drawing.Point(911, 90);
+            this.btnSupprimer.Location = new System.Drawing.Point(898, 75);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(236, 40);
             this.btnSupprimer.TabIndex = 3;
@@ -119,7 +119,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnRaport.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRaport.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnRaport.Location = new System.Drawing.Point(911, 490);
+            this.btnRaport.Location = new System.Drawing.Point(898, 475);
             this.btnRaport.Name = "btnRaport";
             this.btnRaport.Size = new System.Drawing.Size(236, 40);
             this.btnRaport.TabIndex = 5;
@@ -130,7 +130,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnFremer.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFremer.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnFremer.Location = new System.Drawing.Point(911, 582);
+            this.btnFremer.Location = new System.Drawing.Point(898, 567);
             this.btnFremer.Name = "btnFremer";
             this.btnFremer.Size = new System.Drawing.Size(236, 40);
             this.btnFremer.TabIndex = 6;
@@ -144,13 +144,14 @@ namespace DatabaseFirst_LinqtoSql
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgv.Location = new System.Drawing.Point(40, 481);
+            this.dgv.Location = new System.Drawing.Point(40, 487);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(785, 283);
             this.dgv.TabIndex = 7;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
             // 
             // ListBox
@@ -158,7 +159,7 @@ namespace DatabaseFirst_LinqtoSql
             this.ListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListBox.FormattingEnabled = true;
             this.ListBox.ItemHeight = 16;
-            this.ListBox.Location = new System.Drawing.Point(40, 281);
+            this.ListBox.Location = new System.Drawing.Point(40, 270);
             this.ListBox.Name = "ListBox";
             this.ListBox.Size = new System.Drawing.Size(785, 176);
             this.ListBox.TabIndex = 8;
@@ -264,6 +265,7 @@ namespace DatabaseFirst_LinqtoSql
             this.label2.Size = new System.Drawing.Size(21, 17);
             this.label2.TabIndex = 34;
             this.label2.Text = "ID";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -280,7 +282,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnClear.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnClear.Location = new System.Drawing.Point(911, 536);
+            this.btnClear.Location = new System.Drawing.Point(898, 521);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(236, 40);
             this.btnClear.TabIndex = 46;
@@ -292,7 +294,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.button7.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button7.Location = new System.Drawing.Point(911, 446);
+            this.button7.Location = new System.Drawing.Point(898, 431);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(236, 38);
             this.button7.TabIndex = 53;
@@ -304,7 +306,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.button1.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button1.Location = new System.Drawing.Point(911, 358);
+            this.button1.Location = new System.Drawing.Point(898, 343);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 38);
             this.button1.TabIndex = 52;
@@ -315,7 +317,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.button4.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button4.Location = new System.Drawing.Point(911, 314);
+            this.button4.Location = new System.Drawing.Point(898, 299);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(236, 38);
             this.button4.TabIndex = 49;
@@ -327,7 +329,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnOrderbyName.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderbyName.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnOrderbyName.Location = new System.Drawing.Point(911, 270);
+            this.btnOrderbyName.Location = new System.Drawing.Point(898, 255);
             this.btnOrderbyName.Name = "btnOrderbyName";
             this.btnOrderbyName.Size = new System.Drawing.Size(236, 38);
             this.btnOrderbyName.TabIndex = 48;
@@ -339,7 +341,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnOrderSalire.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderSalire.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnOrderSalire.Location = new System.Drawing.Point(911, 228);
+            this.btnOrderSalire.Location = new System.Drawing.Point(898, 213);
             this.btnOrderSalire.Name = "btnOrderSalire";
             this.btnOrderSalire.Size = new System.Drawing.Size(236, 37);
             this.btnOrderSalire.TabIndex = 47;
@@ -362,7 +364,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.BtnJoinEmpWithDept.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnJoinEmpWithDept.ForeColor = System.Drawing.Color.DarkBlue;
-            this.BtnJoinEmpWithDept.Location = new System.Drawing.Point(911, 402);
+            this.BtnJoinEmpWithDept.Location = new System.Drawing.Point(898, 387);
             this.BtnJoinEmpWithDept.Name = "BtnJoinEmpWithDept";
             this.BtnJoinEmpWithDept.Size = new System.Drawing.Size(236, 38);
             this.BtnJoinEmpWithDept.TabIndex = 55;
@@ -374,7 +376,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnFirst.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnFirst.Location = new System.Drawing.Point(911, 638);
+            this.btnFirst.Location = new System.Drawing.Point(898, 623);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(109, 40);
             this.btnFirst.TabIndex = 56;
@@ -386,7 +388,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnLast.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnLast.Location = new System.Drawing.Point(1038, 638);
+            this.btnLast.Location = new System.Drawing.Point(1025, 623);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(109, 40);
             this.btnLast.TabIndex = 57;
@@ -398,7 +400,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnPerviews.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerviews.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnPerviews.Location = new System.Drawing.Point(911, 684);
+            this.btnPerviews.Location = new System.Drawing.Point(898, 669);
             this.btnPerviews.Name = "btnPerviews";
             this.btnPerviews.Size = new System.Drawing.Size(109, 40);
             this.btnPerviews.TabIndex = 59;
@@ -410,7 +412,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnNext.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnNext.Location = new System.Drawing.Point(1038, 684);
+            this.btnNext.Location = new System.Drawing.Point(1025, 669);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(109, 40);
             this.btnNext.TabIndex = 58;
@@ -422,7 +424,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnAddNew.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnAddNew.Location = new System.Drawing.Point(911, 730);
+            this.btnAddNew.Location = new System.Drawing.Point(1025, 715);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(109, 40);
             this.btnAddNew.TabIndex = 60;

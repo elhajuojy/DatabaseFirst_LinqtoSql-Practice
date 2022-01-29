@@ -17,25 +17,42 @@ namespace DatabaseFirst_LinqtoSql
             InitializeComponent();
         }
 
-        //private BindingList<Employee> employeeDataSource = new BindingList<Employee>();
+        private BindingList<Employee> employeeDataSource = new BindingList<Employee>();
         BindingSource bs = new BindingSource();
+        CompanyDBEntities _db = new CompanyDBEntities();
         private void afficher()
         {
             var reqfill = from emp in _db.Employees
                           select emp;
-            var reqDeptName = from dep in _db.Departments
-                              select new {  deptName = dep.DeptName, DeptId=dep.DeptID};
-
-            //employeeDataSource = new BindingList<Employee>(reqfill.ToList());
             bs.DataSource = reqfill.ToList();
 
+            dgv.DataSource = bs;
+
+
+            //employeeDataSource = new BindingList<Employee>(reqfill.ToList());
+
+
+
+
+
+            //fill combobox departement
+            var reqDeptName = from dep in _db.Departments
+                              select new { deptName = dep.DeptName, DeptId = dep.DeptID };
             cbDept.DataSource = reqDeptName.ToList();
             cbDept.DisplayMember = "deptName";
             cbDept.ValueMember = "DeptId";
 
 
+            //binding data
+            txtName.DataBindings.Add("Text", bs, "EmpName");
+            txtID.DataBindings.Add("Text", bs, "EmpID");
+            txtJob.DataBindings.Add("Text", bs, "Job");
+            cbDept.DataBindings.Add("SelectedValue", bs, "DeptNO");
+            txtSalary.DataBindings.Add("Text", bs, "Salary");
+            dtpEmbauche.DataBindings.Add("Value", bs, "HireDate");
+            txtID.Enabled = false;
 
-            dgv.DataSource = bs;
+            
 
 
 
@@ -46,7 +63,7 @@ namespace DatabaseFirst_LinqtoSql
             }
         }
 
-        CompanyDBEntities _db = new CompanyDBEntities();
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             afficher();
@@ -83,6 +100,7 @@ namespace DatabaseFirst_LinqtoSql
             var reqshow = _db.Employees.Select(c => c);
             dgv.DataSource = reqshow.ToList();
             MessageBox.Show("succes");
+            clearText();
 
 
         }
@@ -103,12 +121,20 @@ namespace DatabaseFirst_LinqtoSql
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-                Employee emp3 = new Employee();
-                emp3.EmpID = int.Parse(txtID.Text);
-                emp3.EmpName = txtName.Text;
-                _db.Employees.Add(emp3);
-                _db.SaveChanges();
-                MessageBox.Show("bien Ajtouer");
+            Employee emp3 = new Employee();
+            emp3.EmpID = int.Parse(txtID.Text);
+            emp3.EmpName = txtName.Text;
+            _db.Employees.Add(emp3);
+            _db.SaveChanges();
+            MessageBox.Show("bien Ajtouer");
+
+
+            //bs.EndEdit();
+            //Employee newemp = new Employee();
+            //newemp = bs.Current as Employee;
+            //_db.Employees.Add(newemp);
+            //_db.SaveChanges();
+            //afficher();
         }
 
         private void btnOrderSalire_Click(object sender, EventArgs e)
@@ -143,15 +169,20 @@ namespace DatabaseFirst_LinqtoSql
             Application.Exit();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void clearText()
         {
             txtID.Text = string.Empty;
             txtJob.Text = string.Empty;
             txtName.Text = string.Empty;
             txtSalary.Text = string.Empty;
-            cbDept.Items.Clear();
+            //cbDept.Items.Clear();
             dtpEmbauche.Value = DateTime.Now;
+        }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            clearText();
             
         }
 
@@ -224,7 +255,14 @@ namespace DatabaseFirst_LinqtoSql
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-           // employeeDataSource.AddNew();
+            clearText();
+            var MaxId = _db.Employees.Select(C => C.EmpID).Max() + 1;
+            txtID.Enabled = true;
+            txtID.Text = MaxId.ToString();
+           
+            /*bs.AddNew()*/;
+            
+
         }
 
         private void btnPerviews_Click(object sender, EventArgs e)
@@ -235,6 +273,16 @@ namespace DatabaseFirst_LinqtoSql
         private void btnNext_Click(object sender, EventArgs e)
         {
             bs.MoveNext();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
