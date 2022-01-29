@@ -63,7 +63,7 @@ namespace DatabaseFirst_LinqtoSql
             this.btnLast = new System.Windows.Forms.Button();
             this.btnPerviews = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,10 +143,9 @@ namespace DatabaseFirst_LinqtoSql
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv.Location = new System.Drawing.Point(40, 481);
             this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -405,6 +404,7 @@ namespace DatabaseFirst_LinqtoSql
             this.btnPerviews.TabIndex = 59;
             this.btnPerviews.Text = "Previews";
             this.btnPerviews.UseVisualStyleBackColor = true;
+            this.btnPerviews.Click += new System.EventHandler(this.btnPerviews_Click);
             // 
             // btnNext
             // 
@@ -416,24 +416,26 @@ namespace DatabaseFirst_LinqtoSql
             this.btnNext.TabIndex = 58;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // button2
+            // btnAddNew
             // 
-            this.button2.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button2.Location = new System.Drawing.Point(911, 730);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 40);
-            this.button2.TabIndex = 60;
-            this.button2.Text = "First";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddNew.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnAddNew.Location = new System.Drawing.Point(911, 730);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(109, 40);
+            this.btnAddNew.TabIndex = 60;
+            this.btnAddNew.Text = "Add New";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 794);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnPerviews);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnLast);
@@ -512,7 +514,7 @@ namespace DatabaseFirst_LinqtoSql
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnPerviews;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }
 

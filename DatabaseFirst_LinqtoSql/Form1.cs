@@ -17,23 +17,25 @@ namespace DatabaseFirst_LinqtoSql
             InitializeComponent();
         }
 
-        private BindingList<Employee> employeeDataSource = new BindingList<Employee>();
+        //private BindingList<Employee> employeeDataSource = new BindingList<Employee>();
+        BindingSource bs = new BindingSource();
         private void afficher()
         {
             var reqfill = from emp in _db.Employees
                           select emp;
             var reqDeptName = from dep in _db.Departments
                               select new {  deptName = dep.DeptName, DeptId=dep.DeptID};
-            employeeDataSource = new BindingList<Employee>(reqfill.ToList());
+
+            //employeeDataSource = new BindingList<Employee>(reqfill.ToList());
+            bs.DataSource = reqfill.ToList();
+
+            cbDept.DataSource = reqDeptName.ToList();
+            cbDept.DisplayMember = "deptName";
+            cbDept.ValueMember = "DeptId";
 
 
-            cbDept.DataSource = employeeDataSource;
-            //cbDept.DisplayMember = "deptName";
-            //cbDept.ValueMember = "DeptId";
-            
 
-
-            dgv.DataSource = reqfill.ToList();
+            dgv.DataSource = bs;
 
 
 
@@ -206,7 +208,7 @@ namespace DatabaseFirst_LinqtoSql
             //ListBox.Items.Clear();
             //ListBox.Items.Add(firstemp.EmpName+" -->"+firstemp.Job);
 
-
+            bs.MoveFirst();
 
 
 
@@ -217,10 +219,22 @@ namespace DatabaseFirst_LinqtoSql
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            var firstemp = _db.Employees.Select(E => E).Last();
+            bs.MoveLast();
+        }
 
-            ListBox.Items.Clear();
-            ListBox.Items.Add(firstemp.EmpName + " -->" + firstemp.Job);
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+           // employeeDataSource.AddNew();
+        }
+
+        private void btnPerviews_Click(object sender, EventArgs e)
+        {
+            bs.MovePrevious();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            bs.MoveNext();
         }
     }
 }
