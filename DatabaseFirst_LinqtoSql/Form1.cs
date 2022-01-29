@@ -191,5 +191,34 @@ namespace DatabaseFirst_LinqtoSql
         {
             //txtID.Text = cbDept.SelectedValue.ToString();
         }
+
+        private void btnOrderbyName_Click(object sender, EventArgs e)
+        {
+            var OrderDesc = _db.Employees.OrderByDescending(E => E.EmpName);
+            dgv.DataSource=OrderDesc.ToList();
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+
+
+            var Table = from emp in _db.Employees
+                        select new { id = emp.EmpID };
+
+            Employee emp1 = new Employee();
+            emp1.EmpID = Table.Min(E=>E.id);
+
+            var emp2 = from emp in _db.Employees
+                       where emp.EmpID == emp1.EmpID
+                       select emp;
+
+            dgv.DataSource = emp2.ToList();
+
+
+
+
+
+
+        }
     }
 }
