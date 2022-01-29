@@ -63,6 +63,7 @@ namespace DatabaseFirst_LinqtoSql
             this.btnLast = new System.Windows.Forms.Button();
             this.btnPerviews = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -392,6 +393,7 @@ namespace DatabaseFirst_LinqtoSql
             this.btnLast.TabIndex = 57;
             this.btnLast.Text = "Last";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnPerviews
             // 
@@ -415,11 +417,23 @@ namespace DatabaseFirst_LinqtoSql
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button2.Location = new System.Drawing.Point(911, 730);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 40);
+            this.button2.TabIndex = 60;
+            this.button2.Text = "First";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 794);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPerviews);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnLast);
@@ -498,6 +512,7 @@ namespace DatabaseFirst_LinqtoSql
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnPerviews;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -17,18 +17,19 @@ namespace DatabaseFirst_LinqtoSql
             InitializeComponent();
         }
 
-
+        private BindingList<Employee> employeeDataSource = new BindingList<Employee>();
         private void afficher()
         {
             var reqfill = from emp in _db.Employees
                           select emp;
             var reqDeptName = from dep in _db.Departments
                               select new {  deptName = dep.DeptName, DeptId=dep.DeptID};
+            employeeDataSource = new BindingList<Employee>(reqfill.ToList());
 
 
-            cbDept.DataSource = reqDeptName.ToList();
-            cbDept.DisplayMember = "deptName";
-            cbDept.ValueMember = "DeptId";
+            cbDept.DataSource = employeeDataSource;
+            //cbDept.DisplayMember = "deptName";
+            //cbDept.ValueMember = "DeptId";
             
 
 
@@ -200,25 +201,26 @@ namespace DatabaseFirst_LinqtoSql
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
+            //var firstemp = _db.Employees.Select(E =>E).First();
 
-
-            var Table = from emp in _db.Employees
-                        select new { id = emp.EmpID };
-
-            Employee emp1 = new Employee();
-            emp1.EmpID = Table.Min(E=>E.id);
-
-            var emp2 = from emp in _db.Employees
-                       where emp.EmpID == emp1.EmpID
-                       select emp;
-
-            dgv.DataSource = emp2.ToList();
+            //ListBox.Items.Clear();
+            //ListBox.Items.Add(firstemp.EmpName+" -->"+firstemp.Job);
 
 
 
 
 
 
+
+
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            var firstemp = _db.Employees.Select(E => E).Last();
+
+            ListBox.Items.Clear();
+            ListBox.Items.Add(firstemp.EmpName + " -->" + firstemp.Job);
         }
     }
 }
