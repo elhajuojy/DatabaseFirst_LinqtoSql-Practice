@@ -59,6 +59,10 @@ namespace DatabaseFirst_LinqtoSql
             this.btnOrderSalire = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.BtnJoinEmpWithDept = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnPerviews = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -329,6 +333,7 @@ namespace DatabaseFirst_LinqtoSql
             this.btnOrderbyName.TabIndex = 48;
             this.btnOrderbyName.Text = "Order EmpName Descending";
             this.btnOrderbyName.UseVisualStyleBackColor = true;
+            this.btnOrderbyName.Click += new System.EventHandler(this.btnOrderbyName_Click);
             // 
             // btnOrderSalire
             // 
@@ -365,11 +370,60 @@ namespace DatabaseFirst_LinqtoSql
             this.BtnJoinEmpWithDept.UseVisualStyleBackColor = true;
             this.BtnJoinEmpWithDept.Click += new System.EventHandler(this.BtnJoinEmpWithDept_Click);
             // 
+            // btnFirst
+            // 
+            this.btnFirst.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnFirst.Location = new System.Drawing.Point(911, 638);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(109, 40);
+            this.btnFirst.TabIndex = 56;
+            this.btnFirst.Text = "First";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnLast.Location = new System.Drawing.Point(1038, 638);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(109, 40);
+            this.btnLast.TabIndex = 57;
+            this.btnLast.Text = "Last";
+            this.btnLast.UseVisualStyleBackColor = true;
+            // 
+            // btnPerviews
+            // 
+            this.btnPerviews.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerviews.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnPerviews.Location = new System.Drawing.Point(911, 684);
+            this.btnPerviews.Name = "btnPerviews";
+            this.btnPerviews.Size = new System.Drawing.Size(109, 40);
+            this.btnPerviews.TabIndex = 59;
+            this.btnPerviews.Text = "Previews";
+            this.btnPerviews.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnNext.Location = new System.Drawing.Point(1038, 684);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(109, 40);
+            this.btnNext.TabIndex = 58;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 794);
+            this.Controls.Add(this.btnPerviews);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnLast);
+            this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.BtnJoinEmpWithDept);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button7);
@@ -440,6 +494,10 @@ namespace DatabaseFirst_LinqtoSql
         private System.Windows.Forms.Button btnOrderSalire;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button BtnJoinEmpWithDept;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnPerviews;
+        private System.Windows.Forms.Button btnNext;
     }
 }
 
