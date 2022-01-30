@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CrystalDecisions.Windows.Forms;
+using DatabaseFirst_LinqtoSql.DataSet1TableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -316,6 +318,16 @@ namespace DatabaseFirst_LinqtoSql
 
         private void btnRaport_Click(object sender, EventArgs e)
         {
+            
+            DataSet1 ds = new DataSet1();
+            EmployeeTableAdapter da = new EmployeeTableAdapter();
+            da.FillEmployee(ds.Employee);
+            CrystalReport1 report = new CrystalReport1();
+            report.SetDataSource(ds);
+            ReportForm reportform = new ReportForm();
+            (reportform.Controls["crystalReportViewer1"] as CrystalReportViewer).ReportSource = report;
+            reportform.Show();
+
 
         }
     }
