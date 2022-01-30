@@ -313,5 +313,10 @@ namespace DatabaseFirst_LinqtoSql
         {
 
         }
+
+        private void btnRaport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -125,6 +125,7 @@ namespace DatabaseFirst_LinqtoSql
             this.btnRaport.TabIndex = 5;
             this.btnRaport.Text = "Report";
             this.btnRaport.UseVisualStyleBackColor = true;
+            this.btnRaport.Click += new System.EventHandler(this.btnRaport_Click);
             // 
             // btnFremer
             // 
