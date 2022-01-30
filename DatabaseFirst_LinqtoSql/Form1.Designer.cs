@@ -159,10 +159,11 @@ namespace DatabaseFirst_LinqtoSql
             this.ListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListBox.FormattingEnabled = true;
             this.ListBox.ItemHeight = 16;
-            this.ListBox.Location = new System.Drawing.Point(40, 270);
+            this.ListBox.Location = new System.Drawing.Point(40, 293);
             this.ListBox.Name = "ListBox";
             this.ListBox.Size = new System.Drawing.Size(785, 176);
             this.ListBox.TabIndex = 8;
+            this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
             // 
             // cbDept
             // 
@@ -179,6 +180,7 @@ namespace DatabaseFirst_LinqtoSql
             this.dtpEmbauche.Name = "dtpEmbauche";
             this.dtpEmbauche.Size = new System.Drawing.Size(246, 22);
             this.dtpEmbauche.TabIndex = 44;
+            this.dtpEmbauche.ValueChanged += new System.EventHandler(this.dtpEmbauche_ValueChanged);
             // 
             // label7
             // 
@@ -256,6 +258,7 @@ namespace DatabaseFirst_LinqtoSql
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(246, 30);
             this.txtID.TabIndex = 35;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label2
             // 
@@ -376,7 +379,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnFirst.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnFirst.Location = new System.Drawing.Point(898, 623);
+            this.btnFirst.Location = new System.Drawing.Point(898, 620);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(109, 40);
             this.btnFirst.TabIndex = 56;
@@ -388,7 +391,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnLast.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnLast.Location = new System.Drawing.Point(1025, 623);
+            this.btnLast.Location = new System.Drawing.Point(1025, 620);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(109, 40);
             this.btnLast.TabIndex = 57;
@@ -400,7 +403,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnPerviews.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerviews.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnPerviews.Location = new System.Drawing.Point(898, 669);
+            this.btnPerviews.Location = new System.Drawing.Point(898, 666);
             this.btnPerviews.Name = "btnPerviews";
             this.btnPerviews.Size = new System.Drawing.Size(109, 40);
             this.btnPerviews.TabIndex = 59;
@@ -412,7 +415,7 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnNext.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnNext.Location = new System.Drawing.Point(1025, 669);
+            this.btnNext.Location = new System.Drawing.Point(1025, 666);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(109, 40);
             this.btnNext.TabIndex = 58;
@@ -424,9 +427,9 @@ namespace DatabaseFirst_LinqtoSql
             // 
             this.btnAddNew.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnAddNew.Location = new System.Drawing.Point(1025, 715);
+            this.btnAddNew.Location = new System.Drawing.Point(898, 712);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(109, 40);
+            this.btnAddNew.Size = new System.Drawing.Size(236, 40);
             this.btnAddNew.TabIndex = 60;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;

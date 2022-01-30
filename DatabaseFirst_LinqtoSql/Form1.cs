@@ -80,6 +80,9 @@ namespace DatabaseFirst_LinqtoSql
                        select emp;
 
             dgv.DataSource = emp2.ToList();
+           
+
+
 
         }
 
@@ -110,12 +113,13 @@ namespace DatabaseFirst_LinqtoSql
 
             Employee emp1 = new Employee();
             emp1.EmpID = int.Parse(txtID.Text);
-
+            
             emp1 = (from emp in _db.Employees
                     where emp.EmpID == emp1.EmpID
                     select emp).FirstOrDefault();
             emp1.EmpName = txtName.Text;
-            emp1.Salary = 400000;
+            emp1.Salary = decimal.Parse(txtSalary.Text);
+
             _db.SaveChanges();
         }
 
@@ -150,7 +154,7 @@ namespace DatabaseFirst_LinqtoSql
         {
             var reqGroupby = from emp in _db.Employees
                              group emp by emp.DeptNO into groupto
-                             select new { depno = groupto.Key , nbr = groupto.Count()};
+                             select new { depno = groupto.Key , nbr = groupto.Count() };
 
             dgv.DataSource = reqGroupby.ToList();
                             
@@ -223,7 +227,17 @@ namespace DatabaseFirst_LinqtoSql
 
         private void cbDept_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //txtID.Text = cbDept.SelectedValue.ToString();
+
+            Employee emp2 = new Employee();
+            emp2.DeptNO = int.Parse(cbDept.SelectedValue.ToString());
+            var reqSelectedValueFromCombo = _db.Employees.Where(C => C.DeptNO == emp2.DeptNO);
+
+            
+            dgv.DataSource = reqSelectedValueFromCombo.ToList();
+
+            
+
+            
         }
 
         private void btnOrderbyName_Click(object sender, EventArgs e)
@@ -281,6 +295,21 @@ namespace DatabaseFirst_LinqtoSql
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpEmbauche_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
